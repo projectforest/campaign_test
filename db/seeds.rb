@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #target_hash = Hash.new
+
 def attr_list_function(number) 
   attr_list_array = []
   for i in 0..4

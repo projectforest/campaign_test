@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20160314234258) do
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
-    t.hstore   "profile",                 array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.hstore   "target_list",              array: true
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

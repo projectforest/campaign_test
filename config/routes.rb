@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  
+  #get '/search/:query' => 'search#search', :as => 'search'
+  #
+  resources :search
+  get '/search', to: 'search#search', via: 'GET'
+
 end

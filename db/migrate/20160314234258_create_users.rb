@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     enable_extension "hstore"
     create_table :users do |t|
       t.string :user_name
-      t.hstore :profile, array: true
+      t.hstore :target_list, array: true
 
       t.timestamps null: false
     end
