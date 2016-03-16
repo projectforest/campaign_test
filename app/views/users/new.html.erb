@@ -1,5 +1,8 @@
+<div class="text-center">
 <%= form_for @user do |f| %>
   <div>
     <%= f.submit "Generate user!" %>
   </div>
 <% end %>
+<%= link_to "Users JSON", users_path %>
+</div>

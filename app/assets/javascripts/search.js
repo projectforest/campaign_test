@@ -2,9 +2,9 @@ $(function(){
 
   var result = function(response, searchparams, counter){
     //JSON.stringify(response);
-    $("<div>").text(searchparams).appendTo("#main");
+    $("<div>").text("user: " + searchparams).appendTo("#main");
     $("<div>").text(JSON.stringify(response)).appendTo("#main");
-    $("<div>").text("{" + "counter: " + counter + "}").appendTo("#main");
+    $("<div>").text('{"counter": ' + counter +"}").appendTo("#main");
     
   }
   var counter = 0;
