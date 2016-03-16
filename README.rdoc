@@ -1,5 +1,22 @@
 == README
 
-rake db:seed to activator campaign generator
+Project mostly written in Ruby on Rails (with some javascript and bootstrap CSS) and postgreSQL
+
+campaign generator in db/seeds.rb
+
+user generator in app/controllers/users_controller.rb
+
+search algorithm in app/controllers/search_controller.rb
+
+API for campaign_searching in app/assets/javascripts/search.js
+
+Browser display in app/views
+
+database migration db/migrate
+
+routing configuration in config/routes.rb
+
+
+rake db:seed to activator campaign generator if database is empty
 test for ms:
 wrk -c 64 -d 10s http://localhost:3000/search

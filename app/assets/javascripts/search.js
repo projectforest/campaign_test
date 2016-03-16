@@ -1,7 +1,7 @@
 $(function(){
 
   var result = function(response, searchparams, counter){
-    //JSON.stringify(response);
+  
     $("<div>").text("user: " + searchparams).appendTo("#main");
     $("<div>").text(JSON.stringify(response)).appendTo("#main");
     $("<div>").text('{"counter": ' + counter +"}").appendTo("#main");
@@ -25,10 +25,7 @@ $(function(){
         $("#main").empty();
         result(responses, searchparams, counter);
         console.log(responses);
-        // $("#main").empty();
-        // responses.forEach(function(response){
-        //   result(response);
-        // });
+        
       }
     });
   });

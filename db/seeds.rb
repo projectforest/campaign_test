@@ -8,6 +8,8 @@
 
 #target_hash = Hash.new
 
+
+#campaign generator
 @X = 50
 @Y = 10
 @Z = 1000
