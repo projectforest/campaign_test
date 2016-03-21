@@ -16,11 +16,13 @@ class UsersController < ApplicationController
     user_count = (User.count % 26)+1
     
     @user = User.create(user_name: "u#{(User.count)+1}", target_list: profile_function(user_count))
-    if @user.save
-      redirect_to new_user_path, notice: "User successfully generated"
-    else
-      render 'new'
-    end
+    # if @user.save
+    #   redirect_to new_user_path, notice: "User successfully generated"
+    # else
+    #   render 'new'
+    # end
+    @user.save!
+    redirect_to new_user_path
     
     
   end
