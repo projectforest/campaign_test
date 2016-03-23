@@ -47,7 +47,7 @@ class CampaignsController < ApplicationController
 
   def attr_list_function(number) 
     attr_list_array = []
-    for i in 0..($X-1)
+    for i in 0..(rand($X-1))
       attr_list_array.push((number+65).chr + i.to_s)
     end
     return attr_list_array
@@ -56,7 +56,7 @@ class CampaignsController < ApplicationController
   def target_list_function
     target_list_array = []
 
-    for i in 0..($Y-1)
+    for i in 0..(rand($Y-1))
       target_hash = {target: "attr_" + (i+65).chr, attr_list: attr_list_function(i)}
       target_list_array.push(target_hash)
     end
