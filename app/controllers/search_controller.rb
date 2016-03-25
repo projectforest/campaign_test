@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
 
+  $counter = 0
   def index
+    $counter = 0
     @users = User.all
     @campaigns = Campaign.all
     if params[:searchparams]
@@ -16,7 +18,36 @@ class SearchController < ApplicationController
 
   end
 
+  def search_auto
+    @users = User.all
+    @campaigns = Campaign.all
+    user_count = (User.count % 26)+1
+    
+    @new_user = User.create(user_name: "u#{(User.count)+1}", target_list: profile_function(user_count))
+   
+    
+
+    @user = @users.where(user_name: "#{@new_user.user_name}")
+      
+     
+    @response = search_function(@user, @campaigns)
+    @response[:counter] = $counter + 1
+    $counter = @response[:counter]
+    render json: @response.to_json
+    #redirect_to search_auto_path
+  end
+
   protected
+
+  def profile_function(user_count)
+    profile_array = []
+    for i in 1..(user_count)
+      profile_hash = {target: "attr_" + (i+64).chr, attr_list: (i+64).chr + rand(1..200).to_s}
+      profile_array.push(profile_hash)
+    end
+    return profile_array
+
+  end
 
   def input_function
     params.require(:search).permit(:searchparams)
